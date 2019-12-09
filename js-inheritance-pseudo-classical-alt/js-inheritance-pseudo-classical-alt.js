@@ -12,39 +12,45 @@
 // DO NOT MODIFY FUNCTIONS 'makeHorse' AND 'makeFlyingHorse'
 // USE THE CONSTRUCTOR FUNCTIONS LOCATED AT THE END OF THIS FILE
 
-var makeHorse = function(name) {
-  var result = {};
-  result.name = name;
-  result.goSomewhere = function(destination) {
-    return name + ' is galloping to ' + destination + '!';
-  };
-  return result;
+var MakeHorse = function(name) {
+  //var result = {};
+  this.name = name;
+  //return result;
 };
+  MakeHorse.prototype.goSomewhere = function(destination) {
+    return this.name + ' is galloping to ' + destination + '!';
+  };
 
-var makeFlyingHorse = function(name, color) {
-  var result = makeHorse(name);
-  result.color = color;
-  var oldGoSomewhere = result.goSomewhere;
-  result.goSomewhere = function(destination, milesToDestination) {
+var MakeFlyingHorse = function(name, color) {
+  this.MakeHorse(name);
+  this.color = color;
+  this.oldGoSomewhere = this.goSomewhere;
+  //return result;
+};
+  MakeFlyingHorse.prototype.goSomewhere = function(destination, milesToDestination) {
     if (milesToDestination < 10) {
-      return oldGoSomewhere(destination);
+      return this.oldGoSomewhere(destination);
     } else {
-      return name + ' is flying to ' + destination + '!';
+      return this.name + ' is flying to ' + destination + '!';
     }
   };
-  return result;
-};
 
 // YOUR WORK GOES BELOW
 // Here's some starter code to get you going!
 // Do not use the ES6 `class` keyword; use ES5 to create your classes.
 
 var Horse = function(name) {
+	MakeHorse.call(this,name);
 };
+  Horse.prototype = Object.create(MakeHorse.prototype);
+  Horse.prototype.constructor = Horse;
 
 
 
 var FlyingHorse = function(name, color) {
+	MakeFlyingHorse.call(this,name,color);
 };
+  FlyingHorse.prototype = Object.create(MakeFlyingHorse.prototype);
+  FlyingHorse.prototype.constructor = FlyingHorse;
 
 

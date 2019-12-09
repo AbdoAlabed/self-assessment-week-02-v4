@@ -4,7 +4,6 @@
  */
 
 var TimeComplexity = {
-  FIX_ME: 'wrong answer',
   CONSTANT: 'constant',
   LOGARITHMIC: 'logarithmic',
   LINEAR: 'linear',
@@ -13,7 +12,7 @@ var TimeComplexity = {
 };
 
 
-var sortedIndexOfTimeComplexity =  TimeComplexity.FIX_ME; // TODO: Update this constant
+var sortedIndexOfTimeComplexity =  TimeComplexity.LOGARITHMIC; // time complexity O(log n) 
 
 var sortedIndexOf = function(array, targetElement) {
   var minIndex = 0;
@@ -38,7 +37,7 @@ var sortedIndexOf = function(array, targetElement) {
 };
 
 
-var findDuplicatesTimeComplexity =  TimeComplexity.FIX_ME; // TODO: Update this constant
+var findDuplicatesTimeComplexity =  TimeComplexity.LINEAR;  //  time complexity O(n)
 
 var findDuplicates = function(string) {
   var tracker = {};
@@ -57,7 +56,7 @@ var findDuplicates = function(string) {
 };
 
 
-var bruteForcePasswordTimeComplexity =  TimeComplexity.FIX_ME; // TODO: Update this constant
+var bruteForcePasswordTimeComplexity =  TimeComplexity.EXPONENTIAL; // time complexity O(2^n);
 
 var bruteForcePassword = function(max) {
   var alphabet = 'abcdefghijklmnopqrstuvwxyz';
@@ -91,7 +90,7 @@ var hasDuplicates = function(array) {
 
 
 
-var removeLastThreeElementsTimeComplexity =  TimeComplexity.FIX_ME; // TODO: Update this constant
+var removeLastThreeElementsTimeComplexity =  TimeComplexity.CONSTANT; // tiem complexity O(1) and sometimes O(log n) 
 
 var removeLastThreeElements = function(array) {
   var numberOfElementsToRemove = 3;
@@ -102,7 +101,7 @@ var removeLastThreeElements = function(array) {
 };
 
 
-var increasingStepTimeComplexity =  TimeComplexity.FIX_ME; // TODO: Update this constant
+var increasingStepTimeComplexity =  TimeComplexity.LOGARITHMIC; // time complexity O(log n)
 
 var increasingStep = function(number) {
   for (var i = 1; i < number; i = i * 2) {
@@ -111,7 +110,7 @@ var increasingStep = function(number) {
 };
 
 
-var makeRangeTimeComplexity =  TimeComplexity.FIX_ME; // TODO: Update this constant
+var makeRangeTimeComplexity =  TimeComplexity.QUADRATIC; // time complexity O(N^2)
 
 var makeRange = function(array) {
   array.forEach(function(item) {
